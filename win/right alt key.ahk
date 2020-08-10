@@ -41,8 +41,6 @@ ActivateAndOpen(t,p)
 
 >!w::ActivateAndOpen("微信","C:\Program Files (x86)\Tencent\WeChat\WeChat.exe")
 
->!x::ActivateAndOpen("东方财富","C:\Program Files (x86)\Tencent\RTXC\RTX.exe")
-
 >!g::ActivateAndOpen("Google Chrome","C:\Program Files (x86)\Google\Chrome\Application\chrome.exe")
 
 >!s::ActivateAndOpen("Sublime Text 3","C:\Program Files\Sublime Text 3\sublime_text.exe")
