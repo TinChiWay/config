@@ -22,6 +22,8 @@ rightcmd:bind('o'):to(open.app('Notion'))
 rightcmd:bind('m'):to(open.app("Spark"))
 rightcmd:bind('q'):to(open.app("QQ"))
 rightcmd:bind('f'):to(open.app('Finder'))
+rightcmd:bind('x'):to(open.app('东财IM'))
+rightcmd:bind('d'):to(open.app('DingTalk'))
 
 
 --------------------------------------------------------------------------------
