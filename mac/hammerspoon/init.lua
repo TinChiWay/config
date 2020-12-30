@@ -22,8 +22,10 @@ rightcmd:bind('o'):to(open.app('Notion'))
 rightcmd:bind('m'):to(open.app("Spark"))
 rightcmd:bind('q'):to(open.app("QQ"))
 rightcmd:bind('f'):to(open.app('Finder'))
-rightcmd:bind('x'):to(open.app('东财IM'))
+rightcmd:bind('x'):to(open.app('咚咚'))
 rightcmd:bind('d'):to(open.app('DingTalk'))
+rightcmd:bind('n'):to(open.app('DataGrip'))
+rightcmd:bind('a'):to(open.app('Lark'))
 
 
 --------------------------------------------------------------------------------
@@ -42,17 +44,24 @@ local prevHotkey = hs.hotkey.new('ctrl', 'p',
   postKey({}, 'up'), nil, postKey({}, 'up')
 )
 
-hs.application.watcher.new(function(appName, eventType)
-  if appName ~= 'iTerm2' then return end
-  if eventType == hs.application.watcher.activated then
-    nextHotkey:disable()
-    prevHotkey:disable()
-  end
-  if hs.application.watcher.deactivated then
-    nextHotkey:enable()
-    prevHotkey:enable()
-  end
+local appWatcher = hs.application.watcher.new(function(appName, eventType)
+    if eventType == hs.application.watcher.activated then
+      if appName ~= 'iTerm2' then 
+        nextHotkey:disable()
+        prevHotkey:disable()
+      else
+        nextHotkey:enable()
+        prevHotkey:enable()
+      end
+    end
+  end)
+
+appWatcher:start()
+-- appWatcher will be stopped if the screen is locked.
+hs.caffeinate.watcher.new(function(eventType)
+  appWatcher:start()
 end):start()
+    
 
 --------------------------------------------------------------------------------
 -- Window Management
