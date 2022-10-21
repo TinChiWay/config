@@ -19,13 +19,14 @@ rightcmd:bind('i'):to(open.app('IntelliJ IDEA'))
 rightcmd:bind('g'):to(open.app('Google Chrome'))
 rightcmd:bind('s'):to(open.app('Sublime Text'))
 rightcmd:bind('o'):to(open.app('Notion'))
-rightcmd:bind('m'):to(open.app("Spark"))
+rightcmd:bind('k'):to(open.app("Spark"))
 rightcmd:bind('q'):to(open.app("QQ"))
 rightcmd:bind('f'):to(open.app('Finder'))
 rightcmd:bind('x'):to(open.app('咚咚'))
 rightcmd:bind('d'):to(open.app('DingTalk'))
 rightcmd:bind('n'):to(open.app('DataGrip'))
 rightcmd:bind('a'):to(open.app('Lark'))
+rightcmd:bind('m'):to(open.app('Music'))
 
 
 --------------------------------------------------------------------------------

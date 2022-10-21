@@ -12,8 +12,8 @@ filetype on
 filetype indent on
 
 "允许使用插件
-filetype plugin on
-filetype plugin indent on
+filetype plugin off
+filetype plugin indent off
 
 "关闭vi模式
 set nocp
@@ -127,7 +127,7 @@ source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
 
 "自动补全
-filetype plugin indent on
+filetype plugin indent off
 set completeopt=longest,menu
 
 "自动补全命令时候使用菜单式匹配列表
