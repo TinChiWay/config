@@ -1,0 +1,7 @@
+{
+    "name":"tinchiway's task",
+    "description":"my task",
+    "task":[
+        "10 30 10 * * * https://raw.githubusercontent.com/TinChiWay/config/master/qx/task/remindMedicine.js, tag=大郎的吃药提醒 , img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Lab.png"
+    ]
+}
