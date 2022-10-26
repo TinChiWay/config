@@ -27,6 +27,7 @@ rightcmd:bind('d'):to(open.app('DingTalk'))
 rightcmd:bind('n'):to(open.app('DataGrip'))
 rightcmd:bind('a'):to(open.app('Lark'))
 rightcmd:bind('m'):to(open.app('Music'))
+rightcmd:bind('c'):to(open.app('Visual Studio Code'))
 
 
 --------------------------------------------------------------------------------
