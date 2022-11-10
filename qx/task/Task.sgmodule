@@ -3,7 +3,7 @@
     "description":"my task",
     "task":[
         "10 30 10 * * * https://raw.githubusercontent.com/TinChiWay/config/master/qx/task/remindMedicine.js, tag=大郎的吃药提醒 , img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Lab.png",
-        "10 35 10 27,28,29,30,31 * * https://raw.githubusercontent.com/TinChiWay/config/master/qx/task/checkReimburseBill.js, tag=通讯费消费提醒 , img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Filter.png"
+        "10 35 10 1,2,27,28,29,30,31 * * https://raw.githubusercontent.com/TinChiWay/config/master/qx/task/checkReimburseBill.js, tag=通讯费消费提醒 , img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Filter.png"
 
     ]
 }
