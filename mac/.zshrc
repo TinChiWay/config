@@ -110,8 +110,8 @@ DEFAULT_USER=$USER
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
+#export PATH="$HOME/.pyenv/bin:$PATH"
+#eval "$(pyenv init -)"
 #eval "$(pyenv virtualenv-init -)"
 alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 alias code='/Applications/Visual\ Studio\ Code.app/Contents/MacOS/Electron'

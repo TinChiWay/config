@@ -1,0 +1,10 @@
+version: '2'
+services:
+  ql:
+	container_name: qinglong
+    image: whyour/qinglong:latest
+    volumes:
+      - ./data:/ql/data
+    ports:
+      - "5700:5700"
+    restart: always

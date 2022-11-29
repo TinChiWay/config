@@ -1,8 +1,8 @@
 version: 3
 services:
-  redis:
-    image: redis
-    restart: always
-    container_name: redis
-    ports:
-      - '6379:6379'
+	redis:
+		image: redis:7
+		restart: alway
+		container_name: redis
+		ports:
+			- '6379:6379'
