@@ -111,4 +111,4 @@ export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 #eval "$(pyenv virtualenv-init -)"
 alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
-source /Users/tinchiway/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOME/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
