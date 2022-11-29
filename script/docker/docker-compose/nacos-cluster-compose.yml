@@ -1,0 +1,35 @@
+# nacos
+version: "3"
+
+services:
+    nacos:
+        extra_hosts:
+            - "nacos1:192.168.101.161"
+            - "nacos2:192.168.101.75"
+            - "nacos3:192.168.101.83"
+        image: nacos-server:v2.1.2
+        hostname: nacos1
+        container_name: nacos
+        volumes:
+            - ./logs:/home/nacos/logs
+            - ./conf:/home/nacos/conf
+            - ./data:/home/nacos/data
+        ports:
+            # 7848 raft port
+            - 7848:7848
+            - 8848:8848
+            # grcp port
+            - 9848:9848
+            - 9849:9849
+        restart: always
+        environment:
+            MODE: cluster
+            PREFER_HOST_MODE: hostname
+            NACOS_SERVERS: "nacos1:8848 nacos2:8848 nacos3:8848"
+            SPRING_DATASOURCE_PLATFORM: mysql
+            MYSQL_SERVICE_HOST: 192.168.100.137
+            MYSQL_SERVICE_PORT: 4000
+            MYSQL_SERVICE_USER: user
+            MYSQL_SERVICE_PASSWORD: pw
+            MYSQL_SERVICE_DB_NAME: nacos_config
+            
