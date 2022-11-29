@@ -77,7 +77,7 @@ ZSH_THEME="agnoster"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git 
-zsh-autosuggestions zsh-syntax-highlighting)
+zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -111,3 +111,4 @@ export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 #eval "$(pyenv virtualenv-init -)"
 alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
+source /Users/tinchiway/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
