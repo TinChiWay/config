@@ -3,7 +3,7 @@
 
 # Path to your oh-my-zsh installation.
 
-export ZSH="/Users/tinchiway/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 export PATH=~/.npm-global/bin:$PATH
 PATH=$JAVA_HOME/bin:/usr/local/bin:$PATH:.
 CLASSPATH=$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar:.
