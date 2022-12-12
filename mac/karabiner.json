@@ -207,7 +207,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open '/Applications/Spark.app'"
+                                        "shell_command": "open '/Applications/Spark Desktop.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -224,6 +224,22 @@
                                 "to": [
                                     {
                                         "shell_command": "open '/Applications/Notion.app'"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "x",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_command"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open '/Applications/蜂巢精灵.app'"
                                     }
                                 ],
                                 "type": "basic"

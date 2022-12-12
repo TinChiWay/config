@@ -110,3 +110,6 @@ export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 #eval "$(pyenv virtualenv-init -)"
 alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
+alias code='/Applications/Visual\ Studio\ Code.app/Contents/MacOS/Electron'
+export RUSTUP_DIST_SERVER="https://rsproxy.cn"
+export RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup"
