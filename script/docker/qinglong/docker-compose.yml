@@ -1,10 +1,19 @@
-version: '2'
+version: '3.1'
+networks:
+    cl:
+        external: true
 services:
   ql:
-	container_name: qinglong
+    container_name: qinglong
     image: whyour/qinglong:latest
     volumes:
       - ./data:/ql/data
     ports:
       - "5700:5700"
     restart: always
+    networks:
+        - cl
+    environment:
+        - http_proxy=http://clash:7890
+        - https_proxy=http://clash:7890
+        - no_proxy=127.0.0.1,localhost,10.25.134.200,clash

@@ -93,6 +93,7 @@ set tabstop=4
 "统一缩进为4
 set softtabstop=4
 set shiftwidth=4
+set expandtab
 
 "允许使用退格键，或set backspace=2
 set backspace=eol,start,indent

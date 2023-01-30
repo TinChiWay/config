@@ -24,6 +24,8 @@ Icon
 .AppleDesktop
 Network Trash Folder
 Temporary Items
+*.log
 .apdisk
 .idea
 .vscode
+script/docker/qinglong/data/
