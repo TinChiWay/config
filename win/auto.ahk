@@ -14,20 +14,20 @@
 
 
 ih := InputHook("L1 M T0.3","{Esc}")
-Ctrl::{
+RCtrl::{
 	ih.Start()
 	reason := ih.Wait()
 	if(reason = "Stopped"){
 		Send "{Esc}"
 	}
 	if(ih.EndReason = "Max"){
-		Send "{Blind}{Ctrl Down}" ih.Input
+		Send "{Blind}{RCtrl Down}" ih.Input
 	}
 }
 
-Ctrl Up::{
+RCtrl Up::{
 
-	Send "{Ctrl up}"
+	Send "{RCtrl up}"
 	ih.stop()
 
 }
