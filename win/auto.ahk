@@ -5,7 +5,15 @@
 
 >!w::Run "C:\Program Files (x86)\Tencent\WeChat\WeChat.exe"
 
->!g::Run "C:\Program Files\Google\Chrome\Application\chrome.exe"
+>!q::Run "C:\Program Files (x86)\Tencent\QQMusic\QQMusic.exe"
+
+>!g::
+{
+	if WinExist("Google Chrome")
+		WinActivate
+	else
+		Run "C:\Program Files\Google\Chrome\Application\chrome.exe"
+}
 
 >!s::
 {
@@ -15,10 +23,7 @@
 		Run "C:\Program Files\Sublime Text\sublime_text.exe"
 }
 
->!t::Run "C:\Program Files\PowerShell\7\pwsh.exe"
-
-PgDn::End
-
+>!t::Run "wt.exe"
 
 ih := InputHook("L1 M T0.3","{Esc}")
 RCtrl::{
@@ -26,9 +31,21 @@ RCtrl::{
 	reason := ih.Wait()
 	if(reason = "Stopped"){
 		Send "{Esc}"
-	}
-	if(ih.EndReason = "Max"){
-		Send "{Blind}{RCtrl Down}" ih.Input
+	}else if(ih.EndReason = "Max"){
+		if(ih.Input = "A"){
+			Send "{Home}"
+		}else if(ih.Input = "B"){
+			Send "{Left}"
+		}else if (ih.Input = "E"){
+			Send "{End}"
+		}else if (ih.Input = "N"){
+			Send "{Down}"
+		}else if (ih.Input = "P"){
+			Send "{Up}"
+		}
+		else{
+			Send "{RCtrl Down}" ih.Input
+		}
 	}
 }
 
