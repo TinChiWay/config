@@ -7,10 +7,17 @@
 
 >!g::Run "C:\Program Files\Google\Chrome\Application\chrome.exe"
 
->!s::Run "C:\Program Files\Sublime Text\sublime_text.exe"
+>!s::
+{
+	if WinExist("Sublime Text")
+		WinActivate
+	else
+		Run "C:\Program Files\Sublime Text\sublime_text.exe"
+}
 
 >!t::Run "C:\Program Files\PowerShell\7\pwsh.exe"
 
+PgDn::End
 
 
 ih := InputHook("L1 M T0.3","{Esc}")
