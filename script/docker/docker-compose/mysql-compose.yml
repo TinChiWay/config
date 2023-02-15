@@ -1,7 +1,12 @@
 # Use root/example as user/password credentials
 version: '3.1'
+networks:
+  cl:
+    external: true
 services:
   db:
+    networks:
+      - cl
     container_name: mysql
     image: mysql:8
     # NOTE: use of "mysql_native_password" is not recommended: https://dev.mysql.com/doc/refman/8.0/en/upgrading-from-previous-series.html#upgrade-caching-sha2-password
@@ -11,6 +16,6 @@ services:
     ports:
       - 3306:3306
     volumes:
-      - ./mysqldata:/var/lib/mysql
+      - ./data/mysql:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: root

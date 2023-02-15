@@ -3,17 +3,10 @@ version: '3'
 networks:
   cl:
     external: true
-services:
-  zookeeper:
-    networks: 
-      - cl
-    image: confluentinc/cp-zookeeper:7.3.0
-    container_name: zookeeper
-    environment:
-      ZOOKEEPER_CLIENT_PORT: 2181
-      ZOOKEEPER_TICK_TIME: 2000
 
   broker:
+    volumes:
+      - ./data/kafka:/bitnami/kafka
     networks: 
       - cl
     image: confluentinc/cp-kafka:7.3.0

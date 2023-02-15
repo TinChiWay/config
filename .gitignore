@@ -29,4 +29,4 @@ Temporary Items
 .idea
 .vscode
 script/docker/qinglong/data/
-script/docker/docker-compose/mysqldata
+script/docker/docker-compose/data
