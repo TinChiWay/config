@@ -3,7 +3,7 @@ version: '3'
 networks:
   cl:
     external: true
-
+services:
   broker:
     volumes:
       - ./data/kafka:/bitnami/kafka
