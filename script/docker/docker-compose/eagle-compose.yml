@@ -1,0 +1,14 @@
+version: "3.1"
+networks:
+    cl:
+        external: true
+services:
+    eagle:
+        container_name: efak
+        image: nickzurich/efak:3.0.1
+        environment: 
+            EFAK_CLUSTER_ZK_LIST: zookeeper:2181
+        networks:
+            - cl
+        ports:
+            - 8048:8048
