@@ -1,7 +1,11 @@
 ---
 version: '3'
+networks:
+  zk:
+    external: true
 services:
   zookeeper:
+    networks: zk
     image: confluentinc/cp-zookeeper:7.3.0
     container_name: zookeeper
     environment:
@@ -9,6 +13,7 @@ services:
       ZOOKEEPER_TICK_TIME: 2000
 
   broker:
+    networks: zk
     image: confluentinc/cp-kafka:7.3.0
     container_name: broker
     ports:
