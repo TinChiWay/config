@@ -1,12 +1,12 @@
 ---
 version: '3'
 networks:
-  zk:
+  cl:
     external: true
 services:
   zookeeper:
     networks: 
-      - zk
+      - cl
     image: confluentinc/cp-zookeeper:7.3.0
     container_name: zookeeper
     environment:
@@ -15,7 +15,7 @@ services:
 
   broker:
     networks: 
-      - zk
+      - cl
     image: confluentinc/cp-kafka:7.3.0
     container_name: broker
     ports:
