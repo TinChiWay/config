@@ -4,6 +4,18 @@ networks:
   cl:
     external: true
 services:
+  cmak:
+    networks:
+      - cl
+    image: ghcr.io/eshepelyuk/dckr/cmak-3.0.0.5:latest
+    restart: always
+    command:
+      - "-Dcmak.zkhosts=zookeeper:2181"
+      - "-DbasicAuthentication.enabled=true"
+      - "-DbasicAuthentication.username=username"
+      - "-DbasicAuthentication.password=password"
+    ports:
+      - "9000:9000"
   zookeeper:
     networks:
       - cl
@@ -27,7 +39,7 @@ services:
       KAFKA_BROKER_ID: 1
       KAFKA_ZOOKEEPER_CONNECT: 'zookeeper:2181'
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_INTERNAL:PLAINTEXT
-      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092,PLAINTEXT_INTERNAL://broker:29092
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://:9092,PLAINTEXT_INTERNAL://broker:29092
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
       KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
