@@ -1,0 +1,14 @@
+version: '3'
+networks:
+  kafka:
+services:
+  zookeeper:
+    networks:
+      - kafka
+    image: confluentinc/cp-zookeeper:7.3.0
+    container_name: zookeeper
+    ports:
+      -"2181:2181"
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
