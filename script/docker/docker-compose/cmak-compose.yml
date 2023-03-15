@@ -1,14 +1,17 @@
 version: "3.1"
 networks:
-    cl:
-        external: true
+  cl:
+    external: true
 services:
-    eagle:
-        container_name: efak
-        image: nickzurich/efak:3.0.1
-        environment: 
-            EFAK_CLUSTER_ZK_LIST: 10.25.134.200:2181
-        networks:
-            - cl
-        ports:
-            - 8048:8048
+  cmak:
+    networks:
+      - cl
+    image: ghcr.io/eshepelyuk/dckr/cmak-3.0.0.5:latest
+    restart: always
+    command:
+      - "-Dcmak.zkhosts=zookeeper:2181"
+      - "-DbasicAuthentication.enabled=true"
+      - "-DbasicAuthentication.username=username"
+      - "-DbasicAuthentication.password=password"
+    ports:
+      - "9000:9000"
