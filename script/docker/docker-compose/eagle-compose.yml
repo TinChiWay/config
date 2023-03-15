@@ -7,7 +7,7 @@ services:
         container_name: efak
         image: nickzurich/efak:3.0.1
         environment: 
-            EFAK_CLUSTER_ZK_LIST: zookeeper:2181
+            EFAK_CLUSTER_ZK_LIST: 10.25.134.200:2181
         networks:
             - cl
         ports:
