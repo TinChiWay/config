@@ -1,14 +1,15 @@
 version: '3'
 networks:
-  kafka:
+  cl:
+    external: true
 services:
-  zookeeper:
+  zookeeper_2191:
     networks:
-      - kafka
+      - cl
     image: confluentinc/cp-zookeeper:7.3.0
-    container_name: zookeeper
+    container_name: zookeeper_2191
     ports:
-      -"2191:2181"
+      - "2191:2191"
     environment:
-      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_CLIENT_PORT: 2191
       ZOOKEEPER_TICK_TIME: 2000
