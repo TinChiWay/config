@@ -1,1 +1,113 @@
-/etc/hosts
+##
+# Host Database
+#
+# localhost is used to configure the loopback interface
+# when the system is booting.  Do not change this entry.
+##
+127.0.0.1	localhost
+255.255.255.255	broadcasthost
+::1             localhost
+127.0.0.1 license.sublimehq.com
+127.0.0.1 45.55.255.55
+127.0.0.1 45.55.41.223
+# Added by Docker Desktop
+# To allow the same kube context to work on the host and the container:
+127.0.0.1 kubernetes.docker.internal
+# End of section
+
+#########################
+#   zts start
+#########################
+# Ansible Tower
+10.25.24.240  tower.qilu-dev.com
+
+# Harbor 镜像仓库
+10.25.24.175  registry.qilu-dev.com
+
+# artifactory 仓库
+10.28.10.21 artifactory-sh.zts.com.cn
+
+# xtp数据运营平台
+10.25.24.204 om.zts.com.cn
+
+# PingCode
+10.55.8.120 pingcode.zts.com.cn
+
+# 发布配置平台 - 田伟程/邓凤林
+10.29.91.241 xrs.zts.com.cn xrs-backend.zts.com.cn
+
+# 复核平台 - 田伟程/邓凤林
+10.29.91.241 task-ops.zts.com.cn task-backend.zts.com.cn
+
+# ITSM流程管理平台 - 邬婷
+10.29.91.241 itsm.zts.com.cn
+
+# 百晓生 - 王骥
+10.29.91.241 bestquery.zts.com.cn
+
+# 日志分析平台 - 田伟程/王丽
+10.29.91.241 kibana.zts.com.cn
+
+# 日志巡检平台 - 王丽
+10.29.91.241 cruiser.zts.com.cn
+
+# 监控平台 - 田伟程/祁艳振
+10.29.91.241 n9e.zts.com.cn
+
+# 天旦网络性能管理平台 - 郑晓阳
+10.29.91.241 netis.zts.com.cn
+
+# 堡垒机 - 陈露瑞/张甫成/柳毅
+10.29.91.241 fortress.zts.com.cn
+#192.168.8.87 fortress.zts.com.cn
+
+# 费用统计平台 - 王骥
+10.29.91.241 xtp-fee-oa.zts.com.cn
+
+# 日志易 - 陈露瑞/王丽/田伟程
+10.29.91.241 rzy.zts.com.cn
+10.29.91.241 rzyadmin.zts.com.cn
+
+# xtpadmin - 邓凤林/陈文文
+10.29.91.241 xtpadmin.zts.com.cn
+
+# 运维综合管理平台 - 周晓/祁艳振
+10.29.91.241 xops.zts.com.cn
+
+# OA蓝鲸V5
+10.25.24.116 paas.ztsxtp.com cmdb.ztsxtp.com job.ztsxtp.com
+# OA蓝鲸V6
+10.25.135.28 paas.xtptest.com cmdb.xtptest.com job.xtptest.com jobapi.xtptest.com lesscode.xtptest.com
+10.25.135.29 nodeman.xtptest.com
+
+# 交易网蓝鲸 通过OA网间通信访问解析
+10.29.91.241 paas.zts.com.cn jobs.zts.com.cn cmdb.zts.com.cn jobsapi.zts.com.cn nodeman.zts.com.cn
+# 交易网蓝鲸 通过VPN访问解析
+192.168.1.101 paas.zts.com.cn jobs.zts.com.cn cmdb.zts.com.cn jobsapi.zts.com.cn nodeman.zts.com.cn
+# 交易网蓝鲸 通过交易网访问解析
+10.36.118.100 paas.zts.com.cn jobs.zts.com.cn cmdb.zts.com.cn jobsapi.zts.com.cn nodeman.zts.com.cn
+# 蓝鲸POC
+192.168.3.220 paas.zlpoc.com cmdb.zlpoc.com job.zlpoc.com jobapi.zlpoc.com
+
+# OA运维综合管理平台
+10.28.10.110 txops.xtptest.com
+
+10.36.118.101 xtp-vmselect.zts.com.cn
+10.36.118.101 xtp-vminsert.zts.com.cn
+
+#########################
+# zts end
+#########################
+
+#########################
+# ssh hostname
+
+10.28.10.95 nacos-esc-node1
+10.28.10.67 nacos-esc-node2
+10.28.10.170 nacos-esc-node3
+10.25.134.200 office-centos
+172.168.2.101 office-desktop
+#########################
+
+127.0.0.1 www.proxifier.com
+127.0.0.1  proxifier.com
