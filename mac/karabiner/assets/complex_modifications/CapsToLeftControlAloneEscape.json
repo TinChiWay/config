@@ -1,0 +1,32 @@
+{
+	"title": "Caps_lock to control, escape if pressed alone",
+	"rules": [
+		
+		{
+                        "description": "caps_lock -> control, -> escape if pressed alone",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "caps_lock",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_control"
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "escape"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    }
+	]
+}
