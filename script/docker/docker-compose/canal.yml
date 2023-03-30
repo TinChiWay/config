@@ -1,6 +1,7 @@
 version: '3'
 networks:
   cl:
+    external: true
 services:
   canal-server:
     image: canal/canal-server:v1.1.6
@@ -18,6 +19,6 @@ services:
       - canal.instance.connectionCharset=UTF-8
       - canal.instance.tsdb.enable=true
     volumes:
-      - ./data/canal:/home/admin/canal-server
-    netword:
+      - ./data/canal/logs:/home/admin/canal-server/logs
+    networks:
       - cl
