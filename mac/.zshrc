@@ -20,7 +20,7 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="agnoster"
-#ZSH_THEME="random"
+#ZSH_THEME="dieter"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -80,7 +80,7 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting autojump)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -98,6 +98,7 @@ DEFAULT_USER=$USER
 # else
 #   export EDITOR='mvim'
 # fi
+prompt_context() {}
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -110,9 +111,6 @@ DEFAULT_USER=$USER
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-#export PATH="$HOME/.pyenv/bin:$PATH"
-#eval "$(pyenv init -)"
-#eval "$(pyenv virtualenv-init -)"
 alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 alias code='/Applications/Visual\ Studio\ Code.app/Contents/MacOS/Electron'
 export RUSTUP_DIST_SERVER="https://rsproxy.cn"
@@ -121,3 +119,7 @@ export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+#export GVM_ROOT=/Users/tinchiway/.gvm
+#. $GVM_ROOT/scripts/gvm-default
+
+[[ -s "/Users/tinchiway/.gvm/scripts/gvm" ]] && source "/Users/tinchiway/.gvm/scripts/gvm"

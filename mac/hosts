@@ -106,7 +106,8 @@
 10.28.10.67 nacos-esc-node2
 10.28.10.170 nacos-esc-node3
 10.25.134.200 office-centos
-172.168.2.101 office-desktop
+10.25.102.25 office-desktop
+10.28.10.241 10.28.10.209 txalarm.xtptest.com
 #########################
 
 127.0.0.1 www.proxifier.com
