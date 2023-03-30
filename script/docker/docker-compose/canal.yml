@@ -3,6 +3,15 @@ networks:
   cl:
     external: true
 services:
+  canal-admin:
+    image: canal/canal-admin:v1.1.6
+    ports:
+      - 8089:8089
+    environment:
+      - server.port=8089
+      - spring.datasource.address=mysql
+      - spring.datasource.username=root
+      - spring.datasource.password=root
   canal-server:
     image: canal/canal-server:v1.1.6
     container_name: canal-server
