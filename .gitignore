@@ -30,3 +30,4 @@ Temporary Items
 .vscode
 script/docker/qinglong/data/
 script/docker/docker-compose/data
+script/docker/docker-compose/clash/config
