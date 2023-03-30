@@ -1,0 +1,23 @@
+version: '3'
+networks:
+  cl:
+services:
+  canal-server:
+    image: canal/canal-server:v1.1.6
+    container_name: canal-server
+    restart: always
+    ports: 
+      - 11111:11111
+    environment:
+      - canal.auto.scan=false
+      - canal.instance.master.address=mysql:3306
+      - canal.instance.dbUsername=canal
+      - canal.instance.dbPassword=canal
+      - canal.instance.filter.regex=.*\\..*
+      - canal.destinations=test
+      - canal.instance.connectionCharset=UTF-8
+      - canal.instance.tsdb.enable=true
+    volumes:
+      - ./data/canal:/home/admin/canal-server
+    netword:
+      - cl
