@@ -4,30 +4,36 @@ networks:
     external: true
 services:
   canal-admin:
-    image: canal/canal-admin:v1.1.6
+    container_name: canal-admin
+    networks:
+      - cl
+    image: canal/canal-admin:v1.1.5
+    volumes:
+      - ./data/canal-admin/logs:/home/admin/canal-admin/logs
     ports:
       - 8089:8089
     environment:
+      - JVM_OPTS='-Xms512M -Xmx512M'
       - server.port=8089
-      - spring.datasource.address=mysql
+      - spring.datasource.address=mysql:3306
+      - spring.datasource.database=canal_manager
       - spring.datasource.username=root
       - spring.datasource.password=root
   canal-server:
-    image: canal/canal-server:v1.1.6
+    image: canal/canal-server:v1.1.5
     container_name: canal-server
     restart: always
     ports: 
       - 11111:11111
+      - 11110:11110
     environment:
-      - canal.auto.scan=false
-      - canal.instance.master.address=mysql:3306
-      - canal.instance.dbUsername=canal
-      - canal.instance.dbPassword=canal
-      - canal.instance.filter.regex=.*\\..*
-      - canal.destinations=test
-      - canal.instance.connectionCharset=UTF-8
-      - canal.instance.tsdb.enable=true
+      - JVM_OPTS='-Xms512M -Xmx512M'
+      - canal.admin.manager=canal-admin:8089
+      - canal.admin.port=11110
+      - canal.admin.register.auto=true
     volumes:
       - ./data/canal/logs:/home/admin/canal-server/logs
+    depends_on:
+      - canal-admin
     networks:
       - cl

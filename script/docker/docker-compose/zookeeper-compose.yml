@@ -3,13 +3,12 @@ networks:
   cl:
     external: true
 services:
-  zookeeper_2191:
+  zookeeper:
     networks:
       - cl
-    image: confluentinc/cp-zookeeper:7.3.0
-    container_name: zookeeper_2191
+    image: zookeeper:3.8.1
+    container_name: zookeeper
     ports:
-      - "2191:2191"
+      - "2181:2181"
     environment:
-      ZOOKEEPER_CLIENT_PORT: 2191
-      ZOOKEEPER_TICK_TIME: 2000
+      JVMFLAGS: "-Xmx1024m"

@@ -4,10 +4,13 @@ networks:
     external: true
 services:
   cmak:
+    container_name: cmak
     networks:
       - cl
-    image: ghcr.io/eshepelyuk/dckr/cmak-3.0.0.5:latest
+    image: vimagick/cmak:latest 
     restart: always
+    environment:
+      - JVM_OPT='-Xmx512m'
     command:
       - "-Dcmak.zkhosts=zookeeper:2181"
       - "-DbasicAuthentication.enabled=true"

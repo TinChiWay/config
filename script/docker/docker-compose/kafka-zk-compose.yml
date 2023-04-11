@@ -1,45 +1,34 @@
----
 version: '3'
 networks:
   cl:
     external: true
 services:
-  eagle:
-    container_name: efak
-    image: nickzurich/efak:3.0.1
-    environment: 
-      EFAK_CLUSTER_ZK_LIST: 10.25.134.200:2181
-    networks:
-      - cl
-    ports:
-      - 8048:8048
-  zookeeper:
-    networks:
-      - cl
-    image: confluentinc/cp-zookeeper:7.3.0
-    container_name: zookeeper
-    environment:
-      ZOOKEEPER_CLIENT_PORT: 2181
-      ZOOKEEPER_TICK_TIME: 2000
-    ports:
-      - "2181:2181"
+  # eagle:
+  #   container_name: efak
+  #   image: nickzurich/efak:3.0.1
+  #   environment: 
+  #     KE_JAVA_OPTS: -Xms512M -Xmx512M
+  #     EFAK_CLUSTER_ZK_LIST: zookeeper:2181/kafka_test
+  #   networks:
+  #     - cl
+  #   ports:
+  #     - 8048:8048
   broker:
     networks: 
       - cl
-    image: confluentinc/cp-kafka:7.3.0
+    image: wurstmeister/kafka:2.13-2.8.1 
     container_name: broker
     ports:
     # To learn about configuring Kafka for access across networks see
     # https://www.confluent.io/blog/kafka-client-cannot-connect-to-broker-on-aws-on-docker-etc/
       - "9092:9092"
-    depends_on:
-      - zookeeper
     environment:
       KAFKA_BROKER_ID: 1
-      KAFKA_ZOOKEEPER_CONNECT: 'zookeeper:2181'
-      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_INTERNAL:PLAINTEXT
+      KAFKA_ZOOKEEPER_CONNECT: 'zookeeper:2181/kafka_test'
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,OFFICEHOST:PLAINTEXT
       KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://10.25.134.200:9092
       KAFKA_ADVERTISED_HOST_NAME: 10.25.134.200
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
       KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_HEAP_OPTS: -Xmx512m
