@@ -1,0 +1,17 @@
+version: '2'
+networks:
+  cl:
+    external: true
+
+services:
+  kafka:
+    image: registry.qilu-dev.com/library/kafka:2.8-bitnami-debian
+    ports:
+      - "9093:9092"
+    volumes:
+      - "./data/kafka:/bitnami"
+    environment:
+      - ALLOW_PLAINTEXT_LISTENER=yes
+      - KAFKA_ENABLE_KRAFT=no
+      - KAFKA_CFG_ZOOKEEPER_CONNECT=zookeeper:2181
+      - KAFKA_CFG_LISTENERS=PLAINTEXT://:9092
