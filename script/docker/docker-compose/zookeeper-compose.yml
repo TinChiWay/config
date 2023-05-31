@@ -4,11 +4,12 @@ networks:
     external: true
 services:
   zookeeper:
+    restart: always 
     networks:
       - cl
     image: zookeeper:3.8.1
     container_name: zookeeper
     ports:
-      - "2181:2181"
+      - "2182:2181"
     environment:
       JVMFLAGS: "-Xmx1024m"
