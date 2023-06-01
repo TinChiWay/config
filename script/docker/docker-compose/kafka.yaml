@@ -7,7 +7,7 @@ services:
   kafka:
     restart: always
     container_name: kafka
-    image: registry.qilu-dev.com/library/kafka:2.8-bitnami-debian
+    image: bitnami/kafka:latest 
     ports:
       - "9093:9092"
     volumes:
@@ -15,7 +15,8 @@ services:
     environment:
       - ALLOW_PLAINTEXT_LISTENER=yes
       - KAFKA_ENABLE_KRAFT=no
-      - KAFKA_CFG_ZOOKEEPER_CONNECT=zookeeper:2181
-      - KAFKA_CFG_LISTENERS=PLAINTEXT://:9092
+      - KAFKA_CFG_ZOOKEEPER_CONNECT=zookeeper:2181/kafka_bitnami
+      - KAFKA_CFG_LISTENERS=PLAINTEXT://0.0.0.0:9092
+      - KAFKA_CFG_ADVERTISED_LISTENERS=PLAINTEXT://10.26.183.39:9093
     networks:
       - cl
