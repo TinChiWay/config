@@ -7,9 +7,11 @@ export ZSH="$HOME/.oh-my-zsh"
 export PATH=~/.npm-global/bin:$PATH
 PATH=$JAVA_HOME/bin:/usr/local/bin:$PATH:.
 CLASSPATH=$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar:.
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_261.jdk/Contents/Home
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_202.jdk/Contents/Home
 export PATH
 export CLASSPATH
+export MVNW_USERNAME=tianzw
+export MVNW_PASSWORD=Tianzw@123
 export JULIA_PKG_SERVER=https://mirrors.tuna.tsinghua.edu.cn/julia
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
@@ -113,6 +115,7 @@ prompt_context() {}
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 alias code='/Applications/Visual\ Studio\ Code.app/Contents/MacOS/Electron'
+alias gec='gitmoji -c'
 export RUSTUP_DIST_SERVER="https://rsproxy.cn"
 export RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup"
 export PYENV_ROOT="$HOME/.pyenv"
@@ -123,3 +126,8 @@ eval "$(pyenv init -)"
 #. $GVM_ROOT/scripts/gvm-default
 
 [[ -s "/Users/tinchiway/.gvm/scripts/gvm" ]] && source "/Users/tinchiway/.gvm/scripts/gvm"
+export LOG_PATH="/Users/tinchiway/logs/xtp"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
