@@ -11,3 +11,4 @@ services:
         container_name: redis
         ports:
             - '6380:6379'
+        command: ["redis-server", "--requirepass", "4RcJaEVGT#U4"]
